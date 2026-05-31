@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy 17th Birthday Meicha 🎀</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- ─── LOADING SCREEN ─────────────────────── -->
+<div id="loading-screen">
+  <div class="l-petal">🌸</div>
+  <div class="l-title">dear meicha</div>
+  <div class="l-sub">preparing something special for you...</div>
+  <div class="loading-dots"><span></span><span></span><span></span></div>
+</div>
+
+<!-- ─── CURSOR ────────────────────────────── -->
+<div id="cursor"></div>
+
+<!-- ─── MUSIC TOGGLE ─────────────────────── -->
+<button id="music-toggle" title="Matikan musik">🎵</button>
+
+<!-- ─── PAGE DOTS ─────────────────────────── -->
+<div id="page-dots"></div>
+
+<!-- ─── LIGHTBOX ─────────────────────────── -->
+<div id="lightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="memory">
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 1 — OPENING
+══════════════════════════════════════════ -->
+<section class="page" id="p1">
+  <!-- Floating deco -->
+  <span class="fs" style="top:8%;left:5%;animation-duration:5s;font-size:1.6rem;">🌸</span>
+  <span class="fs" style="top:12%;right:6%;font-size:1.3rem;animation-duration:4.5s;animation-delay:.8s;">✨</span>
+  <span class="fs" style="bottom:15%;left:7%;font-size:1.4rem;animation-duration:6s;animation-delay:.4s;">💕</span>
+  <span class="fs" style="bottom:10%;right:5%;font-size:1.5rem;animation-duration:5.5s;animation-delay:1.2s;">🎀</span>
+  <span class="fs" style="top:30%;left:3%;font-size:1rem;animation-duration:4s;animation-delay:.3s;">✦</span>
+  <span class="fs" style="top:50%;right:4%;font-size:.9rem;animation-duration:5s;animation-delay:.7s;">✦</span>
+  <span class="fs" style="bottom:35%;left:12%;font-size:.85rem;animation-duration:6s;animation-delay:1s;">⭐</span>
+
+  <div class="opening-card">
+    <div class="photo-frame" id="opening-photo-frame">
+      <div class="photo-placeholder">🌸</div>
+    </div>
+
+    <h1>
+      Happy 17th Birthday
+      <span>Meicha Fazarina</span>
+    </h1>
+
+    <div class="date-badge">🎂 &nbsp; 31 Mei 2026 &nbsp; 🎂</div>
+
+    <button class="btn-open" onclick="nextPage()">open your gift 🎀</button>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 2 — CALENDAR
+══════════════════════════════════════════ -->
+<section class="page" id="p2">
+  <span class="fs" style="top:10%;left:8%;animation-duration:5s;font-size:1.3rem;">⭐</span>
+  <span class="fs" style="top:14%;right:9%;animation-duration:4s;animation-delay:.6s;font-size:1rem;">✨</span>
+  <span class="fs" style="bottom:14%;left:6%;animation-duration:6s;animation-delay:.9s;font-size:1.1rem;">🌸</span>
+  <span class="fs" style="bottom:18%;right:8%;animation-duration:5s;animation-delay:.3s;font-size:.9rem;">💕</span>
+
+  <div class="page-title">the day the prettiest girl was born 🎂</div>
+  <div class="page-sub">finally 17 years old, Meicha!</div>
+
+  <div class="calendar-wrap">
+    <div class="cal-header">Mei 2026 🌸</div>
+    <div class="cal-days-header" id="cal-days-header"></div>
+    <div class="cal-grid" id="calendar-grid"></div>
+  </div>
+
+  <button class="btn-next" onclick="nextPage()">next 💫</button>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 3 — POLAROID + PHOTOSTRIP
+══════════════════════════════════════════ -->
+<section class="page" id="p3">
+  <span class="fs" style="top:6%;left:5%;animation-duration:5s;font-size:1.2rem;">🌸</span>
+  <span class="fs" style="top:10%;right:7%;animation-duration:4.5s;animation-delay:.5s;font-size:1rem;">✨</span>
+  <span class="fs" style="bottom:10%;left:8%;animation-duration:6s;animation-delay:.3s;font-size:1rem;">⭐</span>
+
+  <div class="page-title photo-wall-title">our moments together 📸</div>
+  <div class="page-sub" style="margin-bottom:10px;">klik foto untuk memperbesar 🌸</div>
+
+  <!--
+    ✏️ Polaroid (3 foto) + Photostrip (6 foto di 2 baris)
+    Edit di js/main.js → CONFIG.photoWall (9 slot total)
+    - Slot 0-2  → 3 polaroid (baris atas)
+    - Slot 3-5  → photostrip baris 1
+    - Slot 6-8  → photostrip baris 2
+  -->
+  <div class="photostrip-scene" id="photo-wall-grid"></div>
+
+  <button class="btn-next" onclick="nextPage()">next 💕</button>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 4 — VIDEO (1 slot)
+══════════════════════════════════════════ -->
+<section class="page" id="p4">
+  <span class="fs" style="top:9%;left:6%;animation-duration:5.5s;font-size:1.2rem;">🎬</span>
+  <span class="fs" style="bottom:16%;right:8%;animation-duration:4s;animation-delay:.6s;font-size:1rem;">✨</span>
+
+  <div class="video-page-wrap">
+    <div class="page-title" style="margin-bottom:4px;">a special video for you 🎬</div>
+    <div class="page-sub" style="margin-bottom:12px;">sesuatu yang ingin aku tunjukkan 💕</div>
+
+    <!--
+      ✏️ VIDEO — edit di js/main.js → CONFIG.video
+      Opsi:
+        type: 'local'   → taruh file di assets/video/ucapan.mp4
+        type: 'youtube' → isi youtubeId: 'VIDEO_ID_KAMU'
+        type: 'none'    → tampil placeholder
+    -->
+    <div class="video-container" id="video-container"></div>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;
+              color:var(--text-soft);font-size:.9rem;text-align:center;margin-top:8px;">
+      tonton sampai selesai ya 🎀
+    </p>
+  </div>
+
+  <button class="btn-next" onclick="nextPage()">next 💌</button>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 5 — LETTER
+══════════════════════════════════════════ -->
+<section class="page" id="p5">
+  <span class="fs" style="top:5%;left:5%;animation-duration:5s;font-size:1.3rem;pointer-events:none;">💌</span>
+  <span class="fs" style="top:5%;right:6%;animation-duration:4s;animation-delay:.7s;font-size:1.1rem;pointer-events:none;">🌸</span>
+
+  <div class="letter-card">
+    <div class="letter-dear">Dear Meicha,</div>
+    <div id="typed-text"><span class="cursor-blink"></span></div>
+    <div class="letter-sign" id="letter-sign" style="opacity:0;transition:opacity .8s .3s;">
+      — dengan sepenuh hati 💕
+    </div>
+  </div>
+
+  <button class="btn-next" id="btn-letter-next"
+    style="opacity:0;pointer-events:none;transition:opacity .6s;margin-top:16px;margin-bottom:24px;flex-shrink:0;"
+    onclick="nextPage()">
+    next 🌟
+  </button>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 6 — FULL FOTO WALL (banyak foto)
+══════════════════════════════════════════ -->
+<section class="page" id="p6">
+  <span class="fs" style="top:6%;left:4%;animation-duration:5s;font-size:1.3rem;pointer-events:none;">🌸</span>
+  <span class="fs" style="top:10%;right:5%;animation-duration:4s;animation-delay:.4s;font-size:1rem;pointer-events:none;">⭐</span>
+
+  <div class="page-title" style="flex-shrink:0;">all our memories 🖼️</div>
+  <div class="page-sub" style="margin-bottom:10px;flex-shrink:0;">setiap foto, cerita tersendiri 💕</div>
+
+  <div class="full-wall-wrap" id="gallery-grid"></div>
+
+  <button class="btn-next" onclick="nextPage()" style="flex-shrink:0;margin-top:12px;margin-bottom:8px;">next 🎵</button>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 7 — MUSIC (Spotify + YouTube)
+══════════════════════════════════════════ -->
+<section class="page" id="p7">
+  <span class="fs" style="top:10%;left:8%;animation-duration:5s;font-size:1.2rem;">🎵</span>
+  <span class="fs" style="top:15%;right:10%;animation-duration:4s;animation-delay:.5s;font-size:1rem;">✦</span>
+  <span class="fs" style="bottom:18%;left:10%;animation-duration:6s;animation-delay:1s;font-size:.9rem;">🌸</span>
+
+  <div class="page-title">songs for you 🎵</div>
+  <div class="page-sub" style="margin-bottom:14px;">"lagu yang selalu mengingatkanku padamu" 🎀</div>
+
+  <div class="music-card" style="gap:12px;">
+    <div class="vinyl" id="vinyl" style="width:80px;height:80px;"></div>
+
+    <div class="music-info">
+      <div class="song-title" id="song-title"></div>
+      <div class="song-artist" id="song-artist"></div>
+    </div>
+
+    <!-- Spotify embed — autoplay saat masuk halaman ini -->
+    <div id="spotify-embed-wrap" style="width:100%;">
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;
+                  color:var(--text-soft);font-size:.85rem;text-align:center;">
+        🎵 memuat musik dari Spotify...
+      </div>
+    </div>
+
+    <!-- YouTube thumbnail card -->
+    <div id="yt-card-wrap" style="width:100%;"></div>
+  </div>
+
+  <button class="btn-next" onclick="nextPage()">next 🎁</button>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 8 — ENDING
+══════════════════════════════════════════ -->
+<section class="page" id="p8">
+  <div class="confetti-wrap" id="confetti-wrap"></div>
+
+  <span class="fs" style="top:8%;left:5%;animation-duration:5s;font-size:1.5rem;">🌟</span>
+  <span class="fs" style="top:10%;right:6%;animation-duration:4s;animation-delay:.6s;font-size:1.3rem;">✨</span>
+  <span class="fs" style="bottom:20%;left:7%;animation-duration:6s;animation-delay:.3s;font-size:1.2rem;">🌸</span>
+
+  <div class="ending-card">
+    <span class="ending-emoji">🎁</span>
+
+    <h2>
+      thank you for being<br>
+      <em>part of my life</em>
+    </h2>
+
+    <div class="floating-hearts">
+      <span class="f-heart" style="animation-duration:4s;animation-delay:0s;">💕</span>
+      <span class="f-heart" style="animation-duration:5s;animation-delay:.4s;">🌸</span>
+      <span class="f-heart" style="animation-duration:3.5s;animation-delay:.8s;">💖</span>
+      <span class="f-heart" style="animation-duration:4.5s;animation-delay:.2s;">⭐</span>
+      <span class="f-heart" style="animation-duration:5s;animation-delay:1s;">🎀</span>
+      <span class="f-heart" style="animation-duration:4s;animation-delay:.6s;">💫</span>
+    </div>
+
+    <p>
+      selamat ulang tahun yang ke-17, Meicha 🎂<br>
+      semoga harimu selalu indah,<br>
+      hidupmu penuh kebahagiaan,<br>
+      dan semua impianmu terwujud ✨
+    </p>
+
+    <button class="btn-replay" onclick="goToPage(0)">↺ replay from the start 🎀</button>
+  </div>
+</section>
+
+
+<!-- ─── Main JavaScript ──────────────────── -->
+<script src="js/main.js"></script>
+</body>
+</html>
